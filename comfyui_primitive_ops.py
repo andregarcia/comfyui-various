@@ -296,7 +296,8 @@ class _:
             ),
         }
     }
-    RETURN_TYPES = ("STRING_LIST",)
+    RETURN_TYPES = ("STRING",)
+    OUTPUT_IS_LIST = (True,)
     FUNCTION = "execute"
 
     def execute(self, source: str, split_by: str) -> tuple[list[str]]:
