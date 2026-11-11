@@ -284,6 +284,25 @@ def _(
             return (a, "")
 
 
+@register_node("JWStringSplit2", "String Split 2")
+class _:
+    CATEGORY = "jamesWalker55"
+    INPUT_TYPES = lambda: {
+        "required": {
+            "source": ("STRING", {"forceInput": True}),
+            "split_by": (
+                "STRING",
+                {"default": ",", "multiline": False, "dynamicPrompts": False},
+            ),
+        }
+    }
+    RETURN_TYPES = ("STRING_LIST",)
+    FUNCTION = "execute"
+
+    def execute(self, source: str, split_by: str) -> tuple[list[str]]:
+        return ([part for item in source.split(split_by) if (part := item.strip())],)
+
+
 @generate_functional_node("jamesWalker55", "JWStringGetLine", "String Get Line")
 def _(source: str = "", line_index: int = 0) -> tuple[str]:
     return (source.splitlines()[line_index],)

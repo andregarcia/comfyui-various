@@ -84,6 +84,7 @@ comfyui_primitive_ops
   JWStringConcat: String Concatenate
   JWStringReplace: String Replace
   JWStringSplit: String Split
+  JWStringSplit2: String Split 2
   JWStringGetLine: String Get Line
   JWStringUnescape: String Unescape
 
@@ -116,6 +117,9 @@ comfyui_mask_sequence_ops
   JWMaskSequenceJoin: Join Mask Sequence
   JWMaskSequenceApplyToLatent: Apply Mask Sequence to Latent
 ```
+
+String Split 2 takes a connected string, splits it on every occurrence of the
+delimiter, and returns a `STRING_LIST` with whitespace trimmed and empty items removed.
 
 ### Other nodes
 
